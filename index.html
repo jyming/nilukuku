@@ -13,13 +13,18 @@
 </head>
 
 <body>
-	<input type="file" multiple>
+	<button type="button" onclick="upload()">上传视频</button>
 	<button onclick="vibrate()">点我手机震动</button>
 </body>
+<script src="./sdk.js" type="text/javascript" charset="utf-8"></script>
 <script>
 	function vibrate() {
-		console.log(222)
 		navigator.vibrate(200)
+	}
+	var upload = function(){
+		labor.uploadVideo(function(data){
+			console.log(data)
+		})
 	}
 </script>
 
