@@ -13,18 +13,23 @@
 </head>
 
 <body>
-	<button type="button" onclick="upload()">上传视频</button>
 	<button onclick="vibrate()">点我手机震动</button>
+	<p>调用相机拍照</p>
+	<input type="file" accept="image/*" capture="camera" onchange="add(this)">
+	<p>调用相机录视频</p>
+	<input type="file" accept="video/*" capture="camcorder" onchange="add(this)" />
+	<p>调用录音及文件管理</p>
+	<input type="file" accept="audio/*" capture="microphone" onchange="add(this)" />
+	<p>调用相机及文件管理</p>
+	<input type="file" accept="video/*" capture="camcorder" onchange="add(this)" />
 </body>
-<script src="./sdk.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script src="./sdk.js" type="text/javascript" charset="utf-8"></script> -->
 <script>
 	function vibrate() {
 		navigator.vibrate(200)
 	}
-	var upload = function(){
-		labor.uploadVideo(function(data){
-			console.log(data)
-		})
+	function add(e) {
+		console.log(e.files)
 	}
 </script>
 
