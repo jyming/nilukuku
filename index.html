@@ -6,6 +6,12 @@
 	<meta name="viewport"
 		content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover">
 	<title></title>
+	<style>
+		button {
+			display: block;
+			margin: 20px auto;
+		}
+	</style>
 	<script src="https://cdn.jsdelivr.net/npm/vconsole@3.3.4/dist/vconsole.min.js"></script>
 	<script>
 		new VConsole()
@@ -22,14 +28,20 @@
 	<input type="file" accept="audio/*" capture="microphone" onchange="add(this)" />
 	<p>调用相机及文件管理</p>
 	<input type="file" accept="video/*" capture="camcorder" onchange="add(this)" />
+	<button onclick="info()">手机信息</button>
 </body>
 <!-- <script src="./sdk.js" type="text/javascript" charset="utf-8"></script> -->
 <script>
 	function vibrate() {
 		navigator.vibrate(200)
 	}
+
 	function add(e) {
 		console.log(e.files)
+	}
+
+	function info() {
+		alert(navigator.userAgent.toLowerCase())
 	}
 </script>
 
