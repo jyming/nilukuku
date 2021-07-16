@@ -30,7 +30,7 @@
 	<input type="file" accept="video/*" capture="camcorder" onchange="add(this)" />
 	<button onclick="info()">手机信息</button>
 </body>
-<!-- <script src="./sdk.js" type="text/javascript" charset="utf-8"></script> -->
+<script src="./mutual.js" type="text/javascript" charset="utf-8"></script>
 <script>
 	function vibrate() {
 		navigator.vibrate(200)
@@ -42,6 +42,13 @@
 
 	function info() {
 		alert(navigator.userAgent.toLowerCase())
+	}
+
+	function aaa() {
+		window.refInfo = function (info) {
+			console.log(info)
+		}
+		mutual("show");
 	}
 </script>
 
