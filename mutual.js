@@ -3,6 +3,7 @@ let device = u.indexOf("iPhone") > -1 ? 'iPhone' : u.indexOf("Android") > -1 ? '
 let mutual = function (type, fn) {
   if (device == 'Android') {
     try {
+      console.log(type)
       window.AndroidWebView.showInfoFromJs(type);
     } catch (e) {
       console.log(e)
