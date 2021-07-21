@@ -72,7 +72,7 @@
 
     function video(params) {
       // 想要获取一个最接近 1280x720 的相机分辨率
-      var constraints = { audio: true, video: { width: 1280, height: 720 } };
+      var constraints = { audio: true, video: true };
 
       navigator.mediaDevices
         .getUserMedia(constraints)
