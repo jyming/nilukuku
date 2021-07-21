@@ -1,57 +1,91 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover"
+    />
+    <title></title>
+    <style>
+      button {
+        display: block;
+        margin: 20px auto;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vconsole@3.3.4/dist/vconsole.min.js"></script>
+    <script>
+      new VConsole();
+    </script>
+  </head>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport"
-		content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover">
-	<title></title>
-	<style>
-		button {
-			display: block;
-			margin: 20px auto;
-		}
-	</style>
-	<script src="https://cdn.jsdelivr.net/npm/vconsole@3.3.4/dist/vconsole.min.js"></script>
-	<script>
-		new VConsole()
-	</script>
-</head>
+  <body>
+    <button onclick="vibrate()">点我手机震动</button>
+    <p>调用相机拍照</p>
+    <input type="file" accept="image/*" capture="camera" onchange="add(this)" />
+    <p>调用相机录视频</p>
+    <input
+      type="file"
+      accept="video/*"
+      capture="camcorder"
+      onchange="add(this)"
+    />
+    <p>调用录音及文件管理</p>
+    <input
+      type="file"
+      accept="audio/*"
+      capture="microphone"
+      onchange="add(this)"
+    />
+    <p>调用相机及文件管理</p>
+    <input
+      type="file"
+      accept="video/*"
+      capture="camcorder"
+      onchange="add(this)"
+    />
+    <button onclick="info()">手机信息</button>
+	<button onclick="摄像头">手机信息</button>
+    <video src=""></video>
+  </body>
+  <script src="./mutual.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    function vibrate() {
+      navigator.vibrate(200);
+    }
 
-<body>
-	<button onclick="vibrate()">点我手机震动</button>
-	<p>调用相机拍照</p>
-	<input type="file" accept="image/*" capture="camera" onchange="add(this)">
-	<p>调用相机录视频</p>
-	<input type="file" accept="video/*" capture="camcorder" onchange="add(this)" />
-	<p>调用录音及文件管理</p>
-	<input type="file" accept="audio/*" capture="microphone" onchange="add(this)" />
-	<p>调用相机及文件管理</p>
-	<input type="file" accept="video/*" capture="camcorder" onchange="add(this)" />
-	<button onclick="info()">手机信息</button>
-	<button onclick="aaa()">aaa</button>
-</body>
-<script src="./mutual.js" type="text/javascript" charset="utf-8"></script>
-<script>
-	function vibrate() {
-		navigator.vibrate(200)
-	}
+    function add(e) {
+      console.log(e.files);
+    }
 
-	function add(e) {
-		console.log(e.files)
-	}
+    function info() {
+      alert(navigator.userAgent.toLowerCase());
+    }
 
-	function info() {
-		alert(navigator.userAgent.toLowerCase())
-	}
+    function aaa() {
+      console.log(222);
+      window.refInfo = function (info) {
+        console.log(info);
+      };
+      mutual("show");
+    }
 
-	function aaa() {
-		console.log(222)
-		window.refInfo = function (info) {
-			console.log(info)
-		}
-		mutual("show");
-	}
-</script>
+    function video(params) {
+      // 想要获取一个最接近 1280x720 的相机分辨率
+      var constraints = { audio: true, video: { width: 1280, height: 720 } };
 
+      navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then(function (mediaStream) {
+          var video = document.querySelector("video");
+          video.srcObject = mediaStream;
+          video.onloadedmetadata = function (e) {
+            video.play();
+          };
+        })
+        .catch(function (err) {
+          console.log(err.name + ": " + err.message);
+        }); // 总是在最后检查错误
+    }
+  </script>
 </html>
