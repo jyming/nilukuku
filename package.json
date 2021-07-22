@@ -1,0 +1,22 @@
+{
+  "name": "nilukuku",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@varlet/ui": "^1.9.7",
+    "normalize.css": "^8.0.1",
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.10"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "postcss-px-to-viewport": "^1.1.1",
+    "vite": "^2.4.3",
+    "vite-plugin-components": "^0.13.0"
+  }
+}
