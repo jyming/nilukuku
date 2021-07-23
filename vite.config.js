@@ -14,5 +14,8 @@ export default defineConfig({
       customComponentResolvers: [VarletUIResolver()]
     })
   ],
-  base: "./"
+  base: "./",
+  server: {
+    host: '0.0.0.0'
+  }
 })
