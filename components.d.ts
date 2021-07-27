@@ -7,6 +7,7 @@ declare module 'vue' {
     PageHeader: typeof import('./src/components/page-header/index.vue')['default']
     VarButton: typeof import('@varlet/ui')['_ButtonComponent']
     VarIcon: typeof import('@varlet/ui')['_IconComponent']
+    VarPopup: typeof import('@varlet/ui')['_PopupComponent']
   }
 }
 

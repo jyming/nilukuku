@@ -1,0 +1,29 @@
+/* 设置字体 */
+@font-face {
+  font-family: "al-icons";
+  src: url('iconfont.woff2') format('woff2'),
+    url('iconfont.woff') format('woff'),
+    url('iconfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 字体样式 */
+.al-icon--set,
+.al-icon--set::before {
+  position: relative;
+  display: inline-block;
+  font: normal normal normal 14px/1 "al-icons";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 字体名称映射码点 */
+.al-icon-back::before {
+  content: "\e646";
+}
+
+.al-icon-menu:before {
+  content: "\e789";
+}

@@ -1,9 +1,11 @@
 import deepClone from './deepClone'
 import deepMerge from './deepMerge'
+import systemInfo from './systemInfo'
 
 const utils = {
     deepClone,
-    deepMerge
+    deepMerge,
+    systemInfo
 }
 
 const install = Vue => {
