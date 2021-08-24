@@ -18,6 +18,10 @@
       @click="openWX('pages/individual/individual')"
       style="margin-top:20px"
     >跳转我的</var-button>
+    <var-button
+      @click="openWX('pages/workerCircle/workerCircle')"
+      style="margin-top:20px"
+    >跳转工友圈</var-button>
   </div>
 </template>
 
