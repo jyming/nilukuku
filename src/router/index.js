@@ -8,6 +8,9 @@ import Layout from '../layout/index.vue'
 
 import routerConfig from '../../pages.json'
 
+const modules =
+    import.meta.glob('../pages/**/**.vue')
+
 const handleRouter = function () {
     const pages = routerConfig.pages
     let router = []
@@ -25,7 +28,7 @@ const handleRouter = function () {
             meta: {
                 style
             },
-            component: () => import(`../${path}.vue`)
+            component: modules[`../${path}.vue`]
         })
     }
 
