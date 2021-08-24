@@ -19,6 +19,12 @@
             "style": {
                 "navigationBarTitleText": "视频播放"
             }
+        }, {
+            "name": "Wx",
+            "path": "pages/wx/index",
+            "style": {
+                "navigationBarTitleText": "打开小程序"
+            }
         }
     ],
     "globalStyle": {

@@ -3,21 +3,29 @@
     <video
       class="video"
       src="https://www.runoob.com/try/demo_source/movie.mp4"
-      controls
+      :poster="cover"
     ></video>
   </div>
 </template>
 
 <script>
+import cover from '../../assets/image/cover.png'
+import photo1 from '../../assets/image/photo1.jpg'
 export default {
-  mounted() {
-    const video = document.querySelector("video");
-    video.addEventListener("play", () => {
-      labor.videoPlay('https://www.runoob.com/try/demo_source/movie.mp4');
-      video.pause();
-    });
+  data() {
+    return {
+      cover,
+      photo1
+    }
   },
-};
+  mounted() {
+    const video = document.querySelector('video')
+    video.addEventListener('play', () => {
+      labor.videoPlay('https://www.runoob.com/try/demo_source/movie.mp4')
+      video.pause()
+    })
+  }
+}
 </script>
 
 <style>
