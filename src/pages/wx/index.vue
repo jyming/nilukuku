@@ -1,14 +1,23 @@
 <template>
   <div class="container pd">
-    <var-input
-      v-model="val"
-      placeholder="请输入路径"
-      style="margin-top:20px"
-    />
+    <div style="display:flex;align-items:center;margin-top:20px">
+      <var-input
+        v-model="val"
+        placeholder="请输入路径"
+      />
+      <var-button
+        @click="openWX(val)"
+        style="margin-left:10px"
+      >跳转</var-button>
+    </div>
     <var-button
-      @click="openWX"
+      @click="openWX('pages/service/service')"
       style="margin-top:20px"
-    >跳转齐鲁工惠</var-button>
+    >跳转服务</var-button>
+    <var-button
+      @click="openWX('pages/individual/individual')"
+      style="margin-top:20px"
+    >跳转我的</var-button>
   </div>
 </template>
 
@@ -16,13 +25,13 @@
 export default {
   data() {
     return {
-      val: 'pages/service/service'
+      val: ''
     }
   },
   mounted() {},
   methods: {
-    openWX() {
-      labor.openWxapp('gh_610ae6ebd44b', this.val)
+    openWX(link) {
+      labor.openWxapp('gh_610ae6ebd44b', link)
     }
   }
 }
