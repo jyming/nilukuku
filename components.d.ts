@@ -3,7 +3,9 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    VarActionSheet: typeof import('@varlet/ui')['_ActionSheetComponent']
     VarButton: typeof import('@varlet/ui')['_ButtonComponent']
+    VarForm: typeof import('@varlet/ui')['_FormComponent']
     VarIcon: typeof import('@varlet/ui')['_IconComponent']
     VarInput: typeof import('@varlet/ui')['_InputComponent']
     VarPopup: typeof import('@varlet/ui')['_PopupComponent']

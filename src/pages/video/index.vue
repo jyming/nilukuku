@@ -2,21 +2,16 @@
   <div class="container">
     <video
       class="video"
+      controls
       src="https://www.runoob.com/try/demo_source/movie.mp4"
-      :poster="cover"
     ></video>
   </div>
 </template>
 
 <script>
-import cover from '../../assets/image/cover.png'
-import photo1 from '../../assets/image/photo1.jpg'
 export default {
   data() {
-    return {
-      cover,
-      photo1
-    }
+    return {}
   },
   mounted() {
     const video = document.querySelector('video')

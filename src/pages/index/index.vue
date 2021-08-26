@@ -34,6 +34,7 @@ export default {
 
 <style lang="scss">
 .navigate-cell {
+  width: 100%;
   .var-button {
     width: 70%;
     height: 40px;
