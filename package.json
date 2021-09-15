@@ -11,7 +11,8 @@
     "normalize.css": "^8.0.1",
     "vconsole": "^3.9.1",
     "vue": "^3.0.5",
-    "vue-router": "^4.0.10"
+    "vue-router": "^4.0.10",
+    "xgplayer": "^2.29.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.5",

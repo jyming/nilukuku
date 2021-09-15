@@ -4,6 +4,8 @@
       <var-button @click="navigateTo('inputs')">文件选择</var-button>
       <var-button @click="navigateTo('video')">视频播放</var-button>
       <var-button @click="navigateTo('wx')">打开小程序</var-button>
+      <var-button @click="navigateTo('qr')">二维码</var-button>
+      <var-button @click="navigateTo('auth')">入会转会</var-button>
     </div>
   </div>
   <var-popup position="left" v-model:show="popup">

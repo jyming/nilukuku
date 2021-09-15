@@ -25,6 +25,18 @@
             "style": {
                 "navigationBarTitleText": "打开小程序"
             }
+        }, {
+            "name": "Qr",
+            "path": "pages/qr/index",
+            "style": {
+                "navigationBarTitleText": "二维码"
+            }
+        }, {
+            "name": "Auth",
+            "path": "pages/auth/index",
+            "style": {
+                "navigationBarTitleText": "入会转会"
+            }
         }
     ],
     "globalStyle": {
